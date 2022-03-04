@@ -1,0 +1,261 @@
+/* Paragraph style */
+p {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+/* Profile-card general styling */
+.profile-card {
+  font-family: 'Arial', sans-serif;
+  background-color: #e2e1eb;
+	color: #01030e;
+	border-radius: 15px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	padding-top: 30px;
+	padding-bottom: 30px;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Profile card dark mode for toggle */ 
+.profile-card-dark-mode {
+  background-color: #231E39;
+	color: #B3B8CD;
+}
+
+.profile-card img {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #272133;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px white;
+}
+
+/* On hover of profile-card, transform card size */
+.profile-card:hover {
+  transform: scale(1.05);
+  transition: all 350ms;
+}
+
+/* On hover of profile-card, transform profile-pic size */
+.profile-card:hover .profile-pic {
+  transform: scale(1.1);
+}
+
+/* Job title styling, preparing for underline on hover */
+.jobTitle {
+  display: inline-block;
+  vertical-align: middle;
+  color: #4CAF50;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* On hover, show line under text */
+.jobTitle:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 52%;
+  right: 52%;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 50%;
+  height: 3px;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.profile-card:hover .jobTitle:before, .profile-card:focus .jobTitle:before, .profile-card:active .jobTitle:before {
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #017a8f;
+  border-radius: 0;
+}
+
+/* Border and box for button */
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58cdd1;
+  color: #5888d1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0rem;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #eb196e;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.profile-card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 0.75em 2em;
+  letter-spacing: 0.05rem;
+  margin: 1em;
+  width: 13rem;
+}
+
+.profile-card button:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+.profile-card button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* For toggle switch */
+.switch {
+	position: relative;
+	display: block;
+	width: 80px;
+	height: 30px;
+	padding: 3px;
+	margin: 0 10px 10px 0;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+	border-radius: 18px;
+	box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+/* Frame shadow around toggle */
+.switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	background: #eceeef;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	box-sizing:content-box;
+}
+.switch-label:before, .switch-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+	box-sizing:content-box;
+}
+.switch-label:before {
+	right: 11px;
+	color: #aaaaaa;
+}
+.switch-label:after {
+	left: 11px;
+	color: #FFFFFF;
+	opacity: 0;
+}
+
+.switch-input:checked ~ .switch-label {
+	background: #2be152;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.switch-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+.switch-handle {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle:before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle {
+	left: 54px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Toggle transition */
+.switch-label, .switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
