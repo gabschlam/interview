@@ -11,7 +11,7 @@ template.innerHTML = `
     </label>
     <div class="profile-card">
         <img class="profile-pic"/>
-        <div>
+        <div class="profile-content">
             <h2></h2>
             <div class="profile-info">
                 <i class="jobTitle"><slot name="jobTitle" /></i>
