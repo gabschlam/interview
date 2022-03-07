@@ -7,23 +7,35 @@ describe("Show Profile Card Elements", () => {
         cy.get("profile-card");
     });
 
-    it("Should get job title inside profile card element", () => {
+    it("Name element exists inside Profile Card element", () => {
+        cy.get("profile-card").invoke('attr', 'name');
+    });
+
+    it("Image element exists inside Profile Card element", () => {
+        cy.get("profile-card").invoke('attr', 'img');
+    });
+
+    it("Link for button exists inside Profile Card element", () => {
+        cy.get("profile-card").invoke('attr', 'buttonLink');
+    });
+
+    it("Job title element exists inside Profile Card element", () => {
         cy.get("[slot='jobTitle']");
     });
 
-    it("Should get email inside profile card element", () => {
+    it("Email element exists inside Profile Card element", () => {
         cy.get("[slot='email']");
     });
 
-    it("Should get age inside profile card element", () => {
+    it("Age element exists inside Profile Card element", () => {
         cy.get("[slot='age']");
     });
     
-    it("Should get description inside profile card element", () => {
+    it("Description element exists inside Profile Card element", () => {
         cy.get("[slot='description']");
     });
 
-    it("Should get button inside profile card element", () => {
+    it("Button element exists inside Profile Card element", () => {
         cy.get("profile-card").shadow().find("button");
     });
 });

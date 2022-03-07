@@ -7,6 +7,11 @@ describe("Show Texts inside Profile Card", () => {
         cy.get("profile-card");
     });
 
+    it("Name should be Gabriel Schlam", () => {
+        cy.get("profile-card").invoke('attr', 'name')
+        .should('eq', 'Gabriel Schlam')
+    });
+
     it("Job title should be UI/Fullstack Developer at Oracle", () => {
         cy.get("[slot='jobTitle']").should((elem) => {
             expect(elem.text()).to.equal('UI/Fullstack Developer at Oracle');

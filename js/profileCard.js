@@ -35,7 +35,7 @@ class ProfileCard extends HTMLElement {
     this.shadowRoot.querySelector('h2').innerText = this.getAttribute('name');
     this.shadowRoot.querySelector('img').src = this.getAttribute('img');
 
-    linkButton = this.getAttribute('link');
+    linkButton = this.getAttribute('buttonLink');
   }
 
   render() {
